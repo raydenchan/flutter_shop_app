@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/intro.dart' as intro;
+import 'pages/intro.dart' as page;
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Shop App",
-      home: intro.IntroPage(),
+      home: page.IntroPage(),
     );
   }
 }
