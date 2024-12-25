@@ -11,18 +11,19 @@ class IntroPage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //logo
               Padding(
-                padding: const EdgeInsets.all(40.0),
-                child: Image.asset('lib/assets/logo.png', height: 50),
+                padding: const EdgeInsets.all(20.0),
+                child: Image.asset('lib/assets/logo2.png', height: 120),
               ),
               const SizedBox(height: 20),
 
               //title
               Text(
-                'Just Do It',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                'Impossible is Nothing',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
 
               const SizedBox(height: 20),
@@ -31,8 +32,8 @@ class IntroPage extends StatelessWidget {
               Text(
                 'Brand new sneakers and custom kicks made with premium quality',
                 style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.grey,
+                  fontSize: 14,
+                  color: Colors.grey[600],
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -47,12 +48,16 @@ class IntroPage extends StatelessWidget {
                       builder: (context) => HomePage(),
                     )),
                 child: Container(
-                    decoration: BoxDecoration(color: Colors.grey[900]),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[900],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: const Center(
                         child: Text('Shop Now',
                             style: TextStyle(
+                              fontWeight: FontWeight.bold,
                               color: Colors.white,
                             )),
                       ),
