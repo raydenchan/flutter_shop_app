@@ -75,15 +75,23 @@ class _ShopPageState extends State<ShopPage> {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               Shoe shoe = Shoe(
-                name: 'name',
-                price: 'price',
-                description: 'description',
+                name: 'Adizero Boston 12 Shoes',
+                price: '699',
+                description:
+                    'Fast-tempo training shoes with high performance technology.',
                 imagePath: 'lib/assets/adizero-boston-12-shoes.jpg',
               );
               return ShoeTile(
                 shoe: shoe,
               );
             },
+          ),
+        ),
+
+        const Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: Divider(
+            color: Colors.white,
           ),
         )
       ],
