@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../components/shoe_tile.dart';
+import '../models/shoe.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
@@ -64,6 +66,26 @@ class _ShopPageState extends State<ShopPage> {
             ],
           ),
         ),
+
+        const SizedBox(height: 10),
+
+        Expanded(
+          child: ListView.builder(
+            itemCount: 4,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              Shoe shoe = Shoe(
+                name: 'name',
+                price: 'price',
+                description: 'description',
+                imagePath: 'lib/assets/adizero-boston-12-shoes.jpg',
+              );
+              return ShoeTile(
+                shoe: shoe,
+              );
+            },
+          ),
+        )
       ],
     );
   }
