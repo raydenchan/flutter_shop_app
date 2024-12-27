@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter_shop_app/models/cart.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'pages/intro.dart' as page;
+import '../models/cart.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(const MainApp());
 }
 
