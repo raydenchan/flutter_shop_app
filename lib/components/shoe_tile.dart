@@ -3,7 +3,12 @@ import '../models/shoe.dart';
 
 class ShoeTile extends StatelessWidget {
   final Shoe shoe;
-  const ShoeTile({super.key, required this.shoe});
+  final void Function()? onTap;
+  const ShoeTile({
+    super.key,
+    required this.shoe,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +50,7 @@ class ShoeTile extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: Container(
+                    padding: EdgeInsets.all(0),
                     width: 180,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,16 +80,23 @@ class ShoeTile extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                // add spacing between price and add to cart
                 const SizedBox(width: 10),
-                Container(
-                  padding: EdgeInsets.all(20),
-                  decoration: const BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        bottomRight: Radius.circular(12)),
+
+                // add to cart button
+                GestureDetector(
+                  onTap: onTap,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: const BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12)),
+                    ),
+                    child: Icon(Icons.add, color: Colors.white),
                   ),
-                  child: Icon(Icons.add, color: Colors.white),
                 ),
               ],
             ),
