@@ -89,7 +89,7 @@ class _ShopPageState extends State<ShopPage> {
         ),
 
         const Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: EdgeInsets.only(top: 20),
           child: Divider(
             color: Colors.white,
           ),
