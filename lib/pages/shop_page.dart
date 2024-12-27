@@ -14,7 +14,7 @@ class ShopPage extends StatefulWidget {
 class _ShopPageState extends State<ShopPage> {
   //Adding shoe to cart method
   void addShoeToCart(Shoe shoe) {
-    Provider.of<Cart>(context, listen: false).addShoeToCart(shoe);
+    Provider.of<Cart>(context, listen: false).addItemToCart(shoe);
 
     //Alert user that shoe was added
     showDialog(
