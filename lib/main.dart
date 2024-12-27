@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_shop_app/models/cart.dart';
+import 'package:provider/provider.dart';
 import 'pages/intro.dart' as page;
 
 void main() {
@@ -11,12 +13,22 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      scrollBehavior: AppScrollBehavior(),
-      title: "Flutter Shop App",
-      home: page.IntroPage(),
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        scrollBehavior: AppScrollBehavior(),
+        title: "Flutter Shop App",
+        home: page.IntroPage(),
+      ),
     );
+
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   scrollBehavior: AppScrollBehavior(),
+    //   title: "Flutter Shop App",
+    //   home: page.IntroPage(),
+    // );
   }
 }
 

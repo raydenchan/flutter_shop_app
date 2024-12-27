@@ -8,7 +8,7 @@ class ShoeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 25),
+      margin: EdgeInsets.only(left: 20),
       width: 280,
       decoration: BoxDecoration(
         color: Colors.grey[100],
@@ -25,7 +25,7 @@ class ShoeTile extends StatelessWidget {
 
           //description
           Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
             child: Text(
               shoe.description,
               style: TextStyle(
@@ -42,29 +42,39 @@ class ShoeTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Product name
-                    Text(
-                      shoe.name,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Container(
+                    width: 180,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Product name
+                        Text(
+                          shoe.name,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            height: 1.1,
+                          ),
+                        ),
 
-                    const SizedBox(height: 5),
+                        const SizedBox(height: 5),
 
-                    //Product price
-                    Text(
-                      '\$${shoe.price}',
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                      ),
+                        //Product price
+                        Text(
+                          '\$${shoe.price}',
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            fontSize: 12,
+                            height: 1.1,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
+                const SizedBox(width: 10),
                 Container(
                   padding: EdgeInsets.all(20),
                   decoration: const BoxDecoration(
